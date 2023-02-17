@@ -13,7 +13,7 @@ COPY fangfrisch.conf /etc/fangfrisch.conf
 SHELL ["/bin/bash", "-c"]
 RUN python3 -m venv venv \
     && source venv/bin/activate \
-    && pip install fangfrisch \
+    && pip install fangfrisch==1.5.0 \
     && venv/bin/fangfrisch --conf /etc/fangfrisch.conf initdb
 
 COPY entrypoint.sh .
