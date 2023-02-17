@@ -1,7 +1,7 @@
 FROM python:3.11.2
 
 RUN groupadd clamav \
-    && useradd -g clamav -s /bin/false -c "Clam Antivirus" clamav \
+    && useradd --create-home -g clamav -s /bin/false -c "Clam Antivirus" clamav \
     && mkdir -m 0770 -p /var/lib/fangfrisch /var/lib/clamav \
     && chgrp clamav /var/lib/fangfrisch /var/lib/clamav
 
